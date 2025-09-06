@@ -3,90 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESP</title>
+  <title>Elite Solutions Pro</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
       line-height: 1.6;
-      background: #f5f5f5;
+      background: #f9f9f9;
+      color: #333;
     }
+
     header {
-      background: #4f46e5;
+      background: #1e3a8a;
       color: white;
-      padding: 20px 0;
+      padding: 40px 20px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
     nav {
       display: flex;
       justify-content: center;
-      background: #3730a3;
+      background: #0f172a;
     }
+
     nav a {
       color: white;
-      padding: 14px 20px;
       text-decoration: none;
-      display: block;
+      padding: 14px 20px;
+      font-weight: 500;
+      transition: background 0.3s;
     }
+
     nav a:hover {
-      background: #312e81;
+      background: #1e293b;
     }
-    .container {
+
+    section {
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
       padding: 20px;
       background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-    h1, h2 {
-      color: #333;
+
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
     }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f1f5f9;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #0f172a;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #4f46e5;
+      background: #1e3a8a;
       color: white;
-      margin-top: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Welcome to Elite Solutions Pro</h1>
-    <!-- <p>Designed with AI + Free Hosting</p> -->
+    <h1>Elite Solutions Pro</h1>
+    <p>Expert IT Certification Support | 100% Pass Guaranteed</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! This website was generated using AI and hosted for free. You can customize text, colors, and sections easily.</p>
-    </section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Elite Solutions Pro</strong>, we specialize in guiding professionals through 
+      IT certification success. With a proven track record and 100% pass guarantee, 
+      we ensure that every candidate achieves their career goals confidently. 
+      Our mission is to empower individuals with the right knowledge, strategies, 
+      and mentorship to thrive in the tech industry.
+    </p>
+  </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <ul>
-        <li>Web Design</li>
-        <li>AI-Powered Solutions</li>
-        <li>Portfolio Showcase</li>
-      </ul>
-    </section>
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>IT Certifications Prep</strong> – Tailored training with real exam scenarios to ensure success.</li>
+      <li><strong>Job Placement Assistance</strong> – Career support to help you land the right opportunity.</li>
+      <li><strong>Interview Coaching</strong> – Mock interviews, resume building, and HR tips to boost confidence.</li>
+      <li><strong>One-on-One Mentorship</strong> – Personalized guidance from industry-certified experts.</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">elitesolutionspro2025@gmail.com</a></p>
-    </section>
-  </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you. Fill out the form below or reach us directly:</p>
+    <p><strong>Email:</strong> <a href="mailto:elitesolutionspro@gmail.com">elitesolutionspro@gmail.com</a></p>
+    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
 
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Elite Solutions</p>
+    <p>&copy; 2025 Elite Solutions Pro. All Rights Reserved.</p>
+    <p>Empowering IT Professionals for a Better Future.</p>
   </footer>
+
 </body>
 </html>
-
-
