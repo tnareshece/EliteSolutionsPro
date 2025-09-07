@@ -4,6 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elite Solutions Pro</title>
+  <!-- CSS -->
+<style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* center content; use space-between if you add buttons */
+    gap: 14px;
+    background: #1e3a8a;
+    color: #fff;
+    padding: 14px 20px;
+  }
+  .topbar img.logo {
+    height: 56px;              /* controls bar height */
+    max-width: 220px;          /* prevents super-wide images */
+    object-fit: contain;       /* keeps proportions */
+    display: block;
+  }
+  .brand {
+    line-height: 1.1;
+    text-align: left;
+  }
+  .brand h1 { margin: 0; font-size: 1.8rem; }
+  .brand p  { margin: 4px 0 0; font-size: 0.95rem; opacity: .9; }
+  @media (max-width: 520px){
+    .brand h1 { font-size: 1.4rem; }
+    .topbar img.logo { height: 44px; }
+  }
+</style>
   <style>
     /* Global Styles */
     body {
@@ -122,15 +150,21 @@
   <header>
     <h1>Elite Solutions Pro</h1>
     <p>Expert IT Certification | Job/Project | Interview Support</p>
-  </header>  -->
+  </header>  
 <header style="display:flex; align-items:center; justify-content:center; gap:15px; background:#1e3a8a; color:white; padding:20px;">
   <img src="logo.jpg" alt="Elite Solutions Pro Logo" style="max-width:80px;">
   <div>
     <h1 style="margin:0;">Elite Solutions Pro</h1>
     <p style="margin:5px 0 0;">Expert IT Certification | Job/Project | Interview Support</p>
   </div>
+</header> -->
+<header class="topbar">
+  <img class="logo" src="logo.png" alt="Elite Solutions Pro logo">
+  <div class="brand">
+    <h1>Elite Solutions Pro</h1>
+    <p>Expert IT Certification Support | 100% Pass Guaranteed</p>
+  </div>
 </header>
-
   <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
@@ -185,6 +219,7 @@
 
 </body>
 </html>
+
 
 
 
