@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Solutions Pro</title>
+  <!-- CSS -->
+<style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* center content; use space-between if you add buttons */
+    gap: 14px;
+    background: #1e3a8a;
+    color: #fff;
+    padding: 14px 20px;
+  }
+  .topbar img.logo {
+    height: 56px;              /* controls bar height */
+    max-width: 220px;          /* prevents super-wide images */
+    object-fit: contain;       /* keeps proportions */
+    display: block;
+  }
+  .brand {
+    line-height: 1.1;
+    text-align: left;
+  }
+  .brand h1 { margin: 0; font-size: 1.8rem; }
+  .brand p  { margin: 4px 0 0; font-size: 0.95rem; opacity: .9; }
+  @media (max-width: 520px){
+    .brand h1 { font-size: 1.4rem; }
+    .topbar img.logo { height: 44px; }
+  }
+</style>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0f172a;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #1e293b;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f1f5f9;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #0f172a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3a8a;
+      color: white;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header
+  <header>
+    <h1>Elite Solutions Pro</h1>
+    <p>Expert IT Certification | Job/Project | Interview Support</p>
+  </header>  
+<header style="display:flex; align-items:center; justify-content:center; gap:15px; background:#1e3a8a; color:white; padding:20px;">
+  <img src="logo.jpg" alt="Elite Solutions Pro Logo" style="max-width:80px;">
+  <div>
+    <h1 style="margin:0;">Elite Solutions Pro</h1>
+    <p style="margin:5px 0 0;">Expert IT Certification | Job/Project | Interview Support</p>
+  </div>
+</header> -->
+  <style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #1e3a8a;
+    color: white;
+    padding: 16px 20px;
+  }
+
+  /* Control logo size here */
+  .topbar logo.png {
+    height: 100px;   /* increase this value for bigger logo */
+    max-width: 250px;
+    object-fit: contain;
+  }
+
+  .brand h1 { margin: 0; font-size: 2rem; }
+  .brand p  { margin: 5px 0 0; font-size: 1rem; opacity: 0.9; }
+</style>
+<header class="topbar">
+  <img class="logo" src="logo2.png" alt="Elite Solutions Pro logo">
+  <div class="brand">
+    <h1>Elite Solutions Pro</h1>
+    <p>Expert IT Certification | Job/Project | Interview Support</p>
+  </div>
+</header>
+
+<style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #1e3a8a;
+    color: white;
+    padding: 16px 20px;
+    flex-wrap: wrap; /* allows logo/text to wrap on small screens */
+    text-align: center;
+  }
+
+  /* Default logo size (desktop) */
+  .topbar img.logo {
+    height: 100px;
+    max-width: 250px;
+    object-fit: contain;
+  }
+
+  .brand h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  .brand p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  /* Tablet screens */
+  @media (max-width: 768px) {
+    .topbar img.logo {
+      height: 70px;  /* smaller logo */
+      max-width: 180px;
+    }
+    .brand h1 {
+      font-size: 1.6rem;
+    }
+    .brand p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Mobile screens */
+  @media (max-width: 480px) {
+    .topbar {
+      flex-direction: column; /* stack logo above text */
+    }
+    .topbar img.logo {
+      height: 60px;
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .brand h1 {
+      font-size: 1.3rem;
+    }
+    .brand p {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Elite Solutions Pro</strong>, we specialize in guiding professionals through 
+      IT or other certifications like PMP guaranteed success. With a proven track record and 100% pass guarantee, 
+      we ensure that every candidate achieves their career goals confidently. 
+      Our mission is to empower individuals with the right knowledge, strategies, 
+      and mentorship to thrive in the tech industry.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>IT/Other Certifications Support</strong> – 100 % Pass Guaranteed.</li>
+      <li><strong>Job/Project Support</strong> – Daily project support depending on number of hours needed.</li>
+      <li><strong>Interview Support</strong> – Technical help to clear interviews.</li>
+    <!--  <li><strong>One-on-One Mentorship</strong> – Personalized guidance from industry-certified experts.</li>-->
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you. Fill out the form below or reach us directly:</p>
+    <p><strong>Email:</strong> <a href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a></p>
+    <p><strong>Whatsapp:</strong> +919885431582 </p>
+
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/xldwagbr" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Elite Solutions Pro. All Rights Reserved.</p>
+    <p>Empowering IT Professionals for a Better Future.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
