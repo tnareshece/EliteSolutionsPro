@@ -297,21 +297,20 @@ href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a
 </footer>
 <!-- Mobile Dropdown Script -->
 <script>
-function adjustLayout() {
+function adjustBodyPadding() {
   const header = document.querySelector("header");
   const nav = document.querySelector("nav");
-  
-  const root = document.documentElement;
-  root.style.setProperty("--header-height", header.offsetHeight + "px");
-  root.style.setProperty("--nav-height", nav.offsetHeight + "px");
-  
-  // Set nav top dynamically
+  const body = document.body;
+
+  const totalHeight = header.offsetHeight + nav.offsetHeight;
+  body.style.paddingTop = totalHeight + "px";
+
+  // Set nav top exactly below header
   nav.style.top = header.offsetHeight + "px";
 }
 
-// Run on load and resize
-window.addEventListener("load", adjustLayout);
-window.addEventListener("resize", adjustLayout);
+window.addEventListener("load", adjustBodyPadding);
+window.addEventListener("resize", adjustBodyPadding);
 document.querySelectorAll('.services-list .dropdown').forEach(drop => {
 drop.addEventListener('click', () => {
 drop.classList.toggle('active');
@@ -320,6 +319,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
