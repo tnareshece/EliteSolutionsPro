@@ -15,7 +15,7 @@ color: #333;
 header{
 background: #1e3a8a;
   color: white;
-  padding: 8px 16px;       /* compact header */
+  padding: 4px 16px;          /* compact side padding */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,14 +24,16 @@ background: #1e3a8a;
   left: 0;
   right: 0;
   z-index: 1000;
+  height: auto;               /* let logo define height */
+  min-height: 80px;           /* ensures header won't collapse */
 }
 body {
-  margin: 0;
-  padding-top: 90px;  /* adjust for header height */
+ margin: 0;
+  padding-top: 200px;  /* adjust so content doesn't hide behind header+nav */
 }
 /* Logo */
 .logo img {
-  height: 180px;   /* default size for desktop */
+  height: 140px;   /* default size for desktop */
   width: auto;
   display: block;
   object-fit: contain;
@@ -64,6 +66,7 @@ display: flex;
 justify-content: center;
 background: linear-gradient(90deg, #1e3a8a, #2563eb);
 box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ margin-top: 140px;   /* pushes nav below the taller logo */
 }
 nav a {
 color: white;
@@ -301,6 +304,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
