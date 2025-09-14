@@ -15,7 +15,7 @@ color: #333;
 header{
 background: #1e3a8a;
   color: white;
- 
+  padding: 4px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,16 +23,16 @@ background: #1e3a8a;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;  /* higher than nav */
  
 }
 body {
  margin: 0;
-  padding-top: 200px;  /* adjust so content doesn't hide behind header+nav */
+  padding-top: calc(var(--header-height) + var(--nav-height));
 }
 /* Logo */
 .logo img {
-  height: 140px;   /* default size for desktop */
+  height: 140px;   /* adjust as needed */
   width: auto;
   display: block;
   object-fit: contain;
@@ -62,9 +62,12 @@ visibility: hidden; /* Keep white space */
 /* Navigation Bar */
 nav {
 display: flex;
-justify-content: center;
-background: linear-gradient(90deg, #1e3a8a, #2563eb);
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  justify-content: center;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;    /* ✅ makes nav sticky */
+  top: 140px;          /* distance from top = header/logo height */
+  z-index: 1000;
 }
 nav a {
 color: white;
@@ -294,6 +297,21 @@ href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a
 </footer>
 <!-- Mobile Dropdown Script -->
 <script>
+function adjustLayout() {
+  const header = document.querySelector("header");
+  const nav = document.querySelector("nav");
+  
+  const root = document.documentElement;
+  root.style.setProperty("--header-height", header.offsetHeight + "px");
+  root.style.setProperty("--nav-height", nav.offsetHeight + "px");
+  
+  // Set nav top dynamically
+  nav.style.top = header.offsetHeight + "px";
+}
+
+// Run on load and resize
+window.addEventListener("load", adjustLayout);
+window.addEventListener("resize", adjustLayout);
 document.querySelectorAll('.services-list .dropdown').forEach(drop => {
 drop.addEventListener('click', () => {
 drop.classList.toggle('active');
@@ -302,6 +320,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
