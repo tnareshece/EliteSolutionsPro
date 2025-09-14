@@ -14,26 +14,45 @@ color: #333;
 }
 header{
 background: #1e3a8a;
-color: white;
-padding: 8px 16px;        /* minimal padding */
-display: flex;
-align-items: center;
-justify-content: center;  /* center logo */
-position: fixed;          /* ✅ sticky */
-top: 0;
-left: 0;
-right: 0;
-z-index: 1000;            /* stays above content */
+  color: white;
+  padding: 8px 16px;       /* compact header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 body {
   margin: 0;
-  padding-top: 70px;  /* ✅ offset so content doesn’t hide under header */
+  padding-top: 90px;  /* adjust for header height */
 }
 /* Logo */
 .logo img {
-max-height: 300px;   /* ✅ controls header height */
+height: 80px;   /* default size for desktop */
   width: auto;
   display: block;
+  object-fit: contain;
+}
+  /* Responsive logo sizing */
+@media (max-width: 1024px) {   /* tablets */
+  .logo img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {    /* mobile */
+  .logo img {
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {    /* small phones */
+  .logo img {
+    height: 35px;
+  }
 }
 header p {
 margin: 0; /* Removed text under header */
@@ -282,6 +301,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
