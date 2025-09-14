@@ -15,15 +15,25 @@ color: #333;
 header{
 background: #1e3a8a;
 color: white;
+padding: 8px 16px;        /* minimal padding */
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: center;  /* center logo */
+position: fixed;          /* ✅ sticky */
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;            /* stays above content */
+}
+body {
+  margin: 0;
+  padding-top: 70px;  /* ✅ offset so content doesn’t hide under header */
 }
 /* Logo */
 .logo img {
-max-width: 110%;
-color: white;
-margin: 0 auto;
+max-height: 55px;   /* ✅ controls header height */
+  width: auto;
+  display: block;
 }
 header p {
 margin: 0; /* Removed text under header */
@@ -272,6 +282,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
