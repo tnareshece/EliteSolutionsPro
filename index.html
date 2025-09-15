@@ -23,7 +23,8 @@ background: #1e3a8a;
   left: 0;
   right: 0;
   z-index: 1001;  /* higher than nav */
- 
+  padding: 0;              /* ✅ removes extra padding */
+  height: auto;            /* ✅ header height = logo height */
 }
 body {
  margin: 0;
@@ -31,10 +32,11 @@ body {
 }
 /* Logo */
 .logo img {
-  height: 200px;   /* adjust as needed */
+  height: 400px;   /* adjust as needed */
   width: auto;
   align-items: center;
   object-fit: contain;
+display: block; /* removes inline-gap */
 }
   /* Responsive logo sizing */
 @media (max-width: 1024px) {   /* tablets */
@@ -335,6 +337,7 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
 
 
 
