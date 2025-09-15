@@ -15,10 +15,10 @@ color: #333;
 header{
 background: #1e3a8a;
   color: white;
-  padding: 4px 16px;
+  padding: 4px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -34,20 +34,20 @@ body {
 .logo img {
   height: 140px;   /* adjust as needed */
   width: auto;
-  display: block;
   object-fit: contain;
 }
   /* Responsive logo sizing */
 @media (max-width: 1024px) {   /* tablets */
   .logo img {
-    height: 60px;
+    height: 50px;
   }
 }
 
 @media (max-width: 768px) {    /* mobile */
-  .logo img {
-    height: 45px;
-  }
+  header { flex-direction: column; align-items: flex-start; }
+  nav { flex-direction: column; width: 100%; }
+  nav a { width: 100%; text-align: left; padding-left: 0; }
+  .logo img { height: 45px; }
 }
 
 @media (max-width: 480px) {    /* small phones */
@@ -78,11 +78,15 @@ section:first-of-type, #about {
 h2:first-of-type {
   margin-top: 0;   /* remove heading top margin */
 }
-
+/* Navigation inside header */
+nav {
+  display: flex;
+  gap: 15px;
+}
 nav a {
 color: white;
 text-decoration: none;
-padding: 14px 22px;
+padding: 10px 14px;
 font-weight: 500;
 transition: background 0.3s, color 0.3s;
 }
@@ -309,8 +313,8 @@ href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a
 <script>
 function adjustBodyPadding() {
   const header = document.querySelector("header");
-  const nav = document.querySelector("nav");
   const body = document.body;
+  body.style.paddingTop = header.offsetHeight + "px";
 
   // Set nav top below header
   nav.style.top = header.offsetHeight + "px";
@@ -331,3 +335,4 @@ drop.classList.toggle('active');
 </script>
 </body>
 </html>
+
