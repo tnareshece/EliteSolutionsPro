@@ -6,233 +6,82 @@
 <title>Elite Solutions Pro</title>
 <style>
 body {
-margin: 0;
-font-family: "Segoe UI", Arial, sans-serif;
-line-height: 1.6;
-background: #f9fafb;
-color: #333;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #333;
+  padding-top: 0; /* JS will handle exact padding */
 }
-header{
-background: #1e3a8a;
+
+/* Header */
+header {
+  background: #1e3a8a;
   color: white;
-  padding: 4px 16px;
+  padding: 4px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Logo left, nav right */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1001;  /* higher than nav */
- 
+  z-index: 1001;
 }
-body {
- margin: 0;
-  padding-top: 0;  /* JS will handle exact padding */
-}
+
 /* Logo */
 .logo img {
-  height: 140px;   /* adjust as needed */
+  height: 60px; /* default for desktop, responsive handled below */
   width: auto;
-  display: block;
   object-fit: contain;
 }
-  /* Responsive logo sizing */
-@media (max-width: 1024px) {   /* tablets */
-  .logo img {
-    height: 60px;
-  }
-}
 
-@media (max-width: 768px) {    /* mobile */
-  .logo img {
-    height: 45px;
-  }
-}
-
-@media (max-width: 480px) {    /* small phones */
-  .logo img {
-    height: 35px;
-  }
-}
-header p {
-margin: 0; /* Removed text under header */
-visibility: hidden; /* Keep white space */
-}
-/* Navigation Bar */
+/* Navigation inside header */
 nav {
-display: flex;
-  justify-content: center;
-  background: linear-gradient(90deg, #1e3a8a, #2563eb);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  position: sticky;    /* ✅ makes nav sticky */
-  top: 140px;          /* distance from top = header/logo height */
-  z-index: 1000;
+  display: flex;
+  gap: 15px;
 }
-/* Reset first section margins to remove white gap */
-section:first-of-type, #about {
-  margin-top: 0;
-  padding-top: 20px; /* optional inner spacing */
-}
-
-h2:first-of-type {
-  margin-top: 0;   /* remove heading top margin */
-}
-
 nav a {
-color: white;
-text-decoration: none;
-padding: 14px 22px;
-font-weight: 500;
-transition: background 0.3s, color 0.3s;
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
 }
 nav a:hover {
-background: rgba(255,255,255,0.15);
-border-radius: 6px;
-
-}
-section {
-max-width: 1000px;
-margin: 40px auto;
-padding: 20px;
-background: white;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-section h2 {
-color: #1e3a8a;
-margin-bottom: 20px;
-}
-/* Services Highlight Style */
-.services-list {
-display: grid;
-gap: 15px;
-}
-.services-list li {
-background: #f1f5f9;
-padding: 16px 18px;
-border-radius: 8px;
-font-size: 1.05rem;
-box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-transition: transform 0.2s, box-shadow 0.2s;
-list-style: none;
-}
-.services-list li strong {
-color: #1e3a8a;
-}
-.services-list li:hover {
-transform: translateY(-2px);
-box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-/* Dropdown Styles */
-.services-list .dropdown {
-position: relative;
-cursor: pointer;
-}
-.services-list .dropdown-menu {
-display: none;
-list-style: none;
-padding: 10px 15px;
-margin-top: 5px;
-background: #e0e7ff; /* light blue background */
-border-radius: 6px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
 }
 
-.services-list .dropdown-menu li {
-padding: 8px 10px;
-font-size: 1rem;
-color: #1e3a8a;
-background: transparent;
-box-shadow: none;
+/* Responsive logo sizing */
+@media (max-width: 1024px) {
+  .logo img { height: 50px; }
 }
-.services-list .dropdown:hover .dropdown-menu {
-display: block;
-}
-/* Contact Form */
-form {
-display: flex;
-flex-direction: column;
-margin-top: 15px;
-}
-form input, form textarea {
-margin-bottom: 15px;
-padding: 14px;
-border: 1px solid #ddd;
-border-radius: 8px;
-font-size: 1rem;
-transition: border 0.3s;
-}
-form input:focus, form textarea:focus {
-border-color: #2563eb;
-outline: none;
-}
-form button {
-background: #2563eb;
-color: white;
-border: none;
-padding: 14px;
-font-size: 1rem;
-border-radius: 8px;
-cursor: pointer;
-transition: background 0.3s;
-}
-form button:hover {
-background: #1e3a8a;
-}
-/* CTA */
-.cta {
-text-align: center;
-margin: 30px 0 10px;
-font-size: 1.2rem;
-font-weight: 600;
-color: #1e3a8a;
-}
-
-/* WhatsApp Button */
-.whatsapp-float {
-display: block;
-width: fit-content;
-margin: 0 auto 30px;
-background-color: #25d366;
-color: white;
-border-radius: 50px;
-padding: 14px 20px;
-font-size: 16px;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-text-decoration: none;
-font-weight: 500;
-transition: transform 0.3s, background 0.3s;
-}
-.whatsapp-float i {
-font-size: 22px;
-margin-right: 8px;
-}
-.whatsapp-float:hover {
-transform: scale(1.05);
-background-color: #20c157;
-}
-footer {
-text-align: center;
-padding: 20px;
-background: #1e3a8a;
-color: white;
-margin-top: 20px;
-}
-footer p {
-margin: 5px 0;
-}
-/* Mobile Friendly Dropdown */
 @media (max-width: 768px) {
-.services-list .dropdown:hover .dropdown-menu {
-display: none;
+  header { flex-direction: column; align-items: flex-start; }
+  nav { flex-direction: column; width: 100%; }
+  nav a { width: 100%; text-align: left; padding-left: 0; }
+  .logo img { height: 45px; }
 }
-.services-list .dropdown.active .dropdown-menu {
-display: block;
+@media (max-width: 480px) {
+  .logo img { height: 35px; }
 }
+
+/* Section styling */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e3a8a;
+  color: white;
+  margin-top: 20px;
+}
+footer p { margin: 5px 0; }
+
+/* Mobile Dropdown */
+@media (max-width: 768px) {
+  .services-list .dropdown:hover .dropdown-menu { display: none; }
+  .services-list .dropdown.active .dropdown-menu { display: block; }
 }
 </style>
 <!-- Font Awesome for WhatsApp Icon -->
@@ -240,112 +89,48 @@ display: block;
 </head>
 <body>
 
-<!-- Header -->
+<!-- Header with Logo and Navigation -->
 <header>
-<div class="logo">
-  <img src="logo.png" alt="Elite Solutions Pro">
-</div>
+  <div class="logo">
+    <img src="logo.png" alt="Elite Solutions Pro">
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
-<!-- Navigation -->
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
-<!-- About Section -->
-<section id="about">
-<h2>About Us</h2>
-<p>
-At <strong>Elite Solutions Pro</strong>, we specialize in guiding professionals through
-IT or other certifications like PMP with guaranteed success. With a proven track record,
-we ensure that every candidate achieves their career goals confidently.
-Our mission is to empower individuals with the right knowledge, strategies,
-and mentorship to thrive in the tech industry.
-</p>
-</section>
-<!-- Services Section -->
-<section id="services">
-<h2>Our Services</h2>
-<ul class="services-list">
-<li><strong>IT/Other Certifications Help</strong> – 100% Pass Guaranteed.</li>
-<li><strong>Job/Project Support</strong> – Daily project support depending on number of
-hours needed.</li>
-<li><strong>Interview Support</strong> – Technical help to clear interviews.</li>
-<li class="dropdown"><strong>Digital Marketing Services</strong>
-<ul class="dropdown-menu">
-<li>Content Writing</li>
-<li>Website Design & Development</li>
-<li>Social Media Marketing</li>
-</ul>
-</li>
-</ul>
-</section>
-<!-- Contact Section -->
-<section id="contact">
-<h2>Contact Us</h2>
-<p><strong>Email:</strong> <a
-href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a></p>
-<!-- Contact Form -->
 <form action="https://formspree.io/f/xldwagbr" method="POST">
-<input type="text" name="name" placeholder="Your Name" required />
-<input type="email" name="_replyto" placeholder="Your Email" required />
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="_replyto" placeholder="Your Email" required />
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
 </form>
-
-<!-- CTA -->
 <div class="cta">Need quick help? Reach us instantly on WhatsApp 👇</div>
-<!-- WhatsApp Button -->
 <a href="https://wa.me/919885431582" class="whatsapp-float" target="_blank">
-<i class="fab fa-whatsapp"></i> Chat with Us
+  <i class="fab fa-whatsapp"></i> Chat with Us
 </a>
 </section>
+
 <!-- Footer -->
 <footer>
 <p>&copy; 2025 Elite Solutions Pro. All Rights Reserved.</p>
 <p>Empowering IT Professionals for a Better Future.</p>
 </footer>
-<!-- Mobile Dropdown Script -->
+
 <script>
 function adjustBodyPadding() {
   const header = document.querySelector("header");
-  const nav = document.querySelector("nav");
   const body = document.body;
-
-  // Set nav top below header
-  nav.style.top = header.offsetHeight + "px";
-
-  // Set body padding to header + nav height
-  const totalHeight = header.offsetHeight + nav.offsetHeight;
-  body.style.paddingTop = totalHeight + "px";
+  body.style.paddingTop = header.offsetHeight + "px";
 }
-
-// Run on load and resize
 window.addEventListener("load", adjustBodyPadding);
 window.addEventListener("resize", adjustBodyPadding);
+
 document.querySelectorAll('.services-list .dropdown').forEach(drop => {
-drop.addEventListener('click', () => {
-drop.classList.toggle('active');
-});
+  drop.addEventListener('click', () => { drop.classList.toggle('active'); });
 });
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
