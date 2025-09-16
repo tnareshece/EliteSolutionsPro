@@ -13,7 +13,7 @@ background: #f9fafb;
 color: #333;
 }
 header{
-background: #1e3a8a;
+/*background: #1e3a8a;*/
   color: white;
   display: flex;
   justify-content: center;
@@ -24,15 +24,23 @@ background: #1e3a8a;
   z-index: 1001;  /* higher than nav */
   padding: 0;              /* ✅ removes extra padding */
   /*height: 100px;            /* ✅ header height = logo height */
+background-color: #1f3a93; /* Dark blue */
+      overflow: hidden;
 }
 body {
  margin: 0;
   padding-top: 0;  /* JS will handle exact padding */
 }
+   /* Logo styling */
+    .logo {
+      text-align: center;
+      padding: 20px;
+    }
+
 /* Logo */
 .logo img {
   height: 220px;   /* adjust as needed */
-  width: 300px;
+  /*width: 300px;*/
  /* object-fit: contain;*/
 }
   /* Responsive logo sizing */
@@ -245,8 +253,10 @@ display: block;
 
 <!-- Header -->
 <header>
+ <div class="header" id="header">
 <div class="logo">
   <img src="logo.png" alt="Elite Solutions Pro">
+<div style="color: white; font-weight: bold;">ELITE SOLUTIONS <br> <small>PRO</small></div>
 </div>
 </header>
 <!-- Navigation -->
@@ -311,30 +321,22 @@ href="mailto:elitesolutionspro2025@gmail.com">elitesolutionspro2025@gmail.com</a
 </footer>
 <!-- Mobile Dropdown Script -->
 <script>
-function adjustBodyPadding() {
-  const header = document.querySelector("header");
-  const body = document.body;
-  body.style.paddingTop = header.offsetHeight + "px";
+window.addEventListener('load', () => {
+      const logoImage = document.getElementById('logoImage');
+      const header = document.getElementById('header');
 
-  // Set nav top below header
-  nav.style.top = header.offsetHeight + "px";
+      const updateHeaderHeight = () => {
+        const logoHeight = logoImage.clientHeight;
+        header.style.height = (logoHeight * 0.5) + 'px';
+      };
 
-  // Set body padding to header + nav height
-  const totalHeight = header.offsetHeight + nav.offsetHeight;
-  body.style.paddingTop = totalHeight + "px";
-}
-
-// Run on load and resize
-window.addEventListener("load", adjustBodyPadding);
-window.addEventListener("resize", adjustBodyPadding);
-document.querySelectorAll('.services-list .dropdown').forEach(drop => {
-drop.addEventListener('click', () => {
-drop.classList.toggle('active');
-});
-});
+      updateHeaderHeight();
+      window.addEventListener('resize', updateHeaderHeight);
+    });
 </script>
 </body>
 </html>
+
 
 
 
